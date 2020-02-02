@@ -12,3 +12,8 @@
 
 ## Run
 `python DCSWeatherInjector.py`
+
+## What will it do
+It will copy every `*.miz` (excluding `*.realweather.miz`) from the source directory into the target directory under the name `*.realweather.miz` and inject weather and time information into it.
+
+If you do not want current time injected into your mission, add the string `.fixedtime.` to the filename (example: `My.cool.mission.fixedtime.miz`).
