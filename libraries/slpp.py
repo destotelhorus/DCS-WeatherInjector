@@ -1,3 +1,7 @@
+# MIT-License
+# Source https://github.com/IlyaSkriblovsky/slpp-23/blob/master/LICENSE
+# Edited by https://github.com/destotelhorus to work with DCS
+
 import re
 import sys
 from numbers import Number
