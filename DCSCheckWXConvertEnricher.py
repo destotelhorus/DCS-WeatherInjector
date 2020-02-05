@@ -142,7 +142,7 @@ class DCSCheckWXConvertEnricher(object):
     def containsAnyCondition(self, conditioncodes):
         conditions = self.getClosestResult()['conditions']
         for cond in conditions:
-            if cond.code in conditioncodes:
+            if cond['code'] in conditioncodes:
                 return True
         return False
 
