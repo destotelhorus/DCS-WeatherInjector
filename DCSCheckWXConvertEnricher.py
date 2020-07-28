@@ -65,7 +65,12 @@ class DCSCheckWXConvertEnricher(object):
         return self.getClosestResult()['barometer']['hg'] * 25.4
 
     def getTemperature(self):
-        return self.getClosestResult()['temperature']['celsius']
+        closest_data = self.getClosestResult()
+        if hasattr(closest_data['temperature'],'celsius'):
+            return closest_data['temperature']['celsius']
+        if hasattr(closest_data['temperature'],'minimum'):
+            return closest_data['temperature']['minimum']['celsius']
+        return 21
 
     def getTemperatureASL(self):
         """
