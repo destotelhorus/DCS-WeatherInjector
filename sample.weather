@@ -1,0 +1,37 @@
+[Weather]
+#station elevation in meters
+station_elevation=0
+#barometer is barometric pressure at sea level in mm Hg
+barometer=29.92
+#temperature is temperature at station level in degrees celsius
+temperature=21
+#visibility in meters
+visibility=80000
+#precipitation:
+# 0 = None
+# 1 = Rain
+# 2 = Thunderstorm
+# 3 = Heavier precipitation?
+# 4 = Snow
+precipitation=1
+#fog:
+# 0 = false
+# 1 = true
+fog=0
+
+[Wind]
+#Speeds are in meter / second
+asl_direction=20
+asl_speed=10
+asl_gusts=0
+a2000_direction=22
+a2000_speed=10
+a8000_direction=21
+a8000_speed=10
+
+[Clouds]
+#Cloud altitudes are in meters AGL (above the station elevation)
+floor=5000
+ceiling=5000
+#density is 0 (clear) to 9 (overcast)
+density=4

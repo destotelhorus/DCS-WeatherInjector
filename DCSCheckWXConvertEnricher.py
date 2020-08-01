@@ -20,7 +20,7 @@ class DCSCheckWXConvertEnricher(object):
         :return: None
         """
         callingFunc = inspect.stack()[1].function
-        random.seed(self.weatherdata.text + callingFunc)
+        random.seed(self.getWeatherText() + callingFunc)
 
     def getDeterministicRandomFloat(self, min, max):
         """
@@ -51,6 +51,12 @@ class DCSCheckWXConvertEnricher(object):
             retangle -= 360
 
         return retangle
+
+    def getWeatherText(self):
+        return self.weatherdata.text
+
+    def getWeatherCached(self):
+        return self.weatherdata.from_cache
 
     def getLastWeather(self):
         return self.weatherdata
@@ -103,10 +109,10 @@ class DCSCheckWXConvertEnricher(object):
 
     def getGroundTurbulence(self):
         try:
-            return self.getClosestResult()['wind']['gust_kts'] / 0.32808398950131233595800524934383
+            return self.getClosestResult()['wind']['gust_kts'] * 0.514444
         except:
             self.seedRandom()
-            return self.getDeterministicRandomFloat(0, 3) / 0.32808398950131233595800524934383
+            return self.getDeterministicRandomFloat(0, 3) * 0.514444
 
     def getCloudMinMax(self):
         try:
@@ -121,7 +127,7 @@ class DCSCheckWXConvertEnricher(object):
                     minClouds = cloud['base_meters_agl']
                 if not maxClouds or cloud['base_meters_agl'] > maxClouds:
                     maxClouds = cloud['base_meters_agl']
-            return {'min': minClouds, 'max': maxClouds}
+            return {'min': minClouds + self.getStationElevation(), 'max': maxClouds + self.getStationElevation()}
         except:
             return {'min': 5000, 'max': 5000}
 
