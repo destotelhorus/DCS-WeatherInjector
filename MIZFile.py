@@ -58,6 +58,8 @@ class MIZFile(object):
             return {"lat": 36.145615, "lon": -115.187618}
         elif self.getTheatre() == 'Normandy':
             return {"lat": 49.183336, "lon": -0.365908}
+        elif self.getTheatre() == 'Syria':
+            return {"lat": 33.510414, "lon": 36.278336}
         else:
             return None
 
