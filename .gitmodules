@@ -1,0 +1,3 @@
+[submodule "pyMIZFile"]
+	path = pyMIZFile
+	url = https://github.com/destotelhorus/pyMIZFile.git

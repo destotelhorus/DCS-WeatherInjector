@@ -1,6 +1,6 @@
 import os
 from shutil import copyfile
-from MIZFile import MIZFile
+from pyMIZFile.MIZFile import MIZFile
 from CheckWX import CheckWX
 from DCSCheckWXConvertEnricher import DCSCheckWXConvertEnricher
 from DCSWeatherFileConverter import DCSWeatherFileConverter

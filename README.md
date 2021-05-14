@@ -1,5 +1,7 @@
 # DCS-WeatherInjector
 
+# Not updated yet to work with 2.7 clouds!!
+
 ## Prerequisites
 - Get an account on https://www.checkwx.com/ and an apikey.
 - Enter apikey into config.properties
